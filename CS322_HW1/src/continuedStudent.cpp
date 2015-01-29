@@ -91,12 +91,25 @@ ContinuedFraction *getCF(unsigned int head, ContinuedFraction *fixed, ContinuedF
 	}
 	else
 	{
-
+		//return x + getCF(&fixed->head,&fixed->tail,&period->head);
 	}
 
 }
 
 
-Fraction getApproximation(ContinuedFraction *fr, unsigned int n) {
-  // your code here
+Fraction getApproximation(ContinuedFraction *fr, unsigned int n)
+{
+
+	if(n==0)
+	{
+		Fraction y = new Fraction;
+		y.numerator = fr->head;
+		y.denominator = fr->tail;
+		return y;
+	}
+	else
+	{
+		return getApproximation(fr->tail,n-1);
+	}
+
 }
