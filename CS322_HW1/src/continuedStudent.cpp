@@ -82,6 +82,17 @@ ContinuedFraction *getCF(unsigned int b, unsigned int a)
 
 ContinuedFraction *getCF(unsigned int head, ContinuedFraction *fixed, ContinuedFraction *period)
 {
+	ContinuedFraction *x = new ContinuedFraction;
+	(*x).head = head;
+
+	if((*x).tail == nullptr)
+	{
+		return x;
+	}
+	else
+	{
+
+	}
 
 }
 
