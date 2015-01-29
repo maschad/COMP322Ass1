@@ -18,7 +18,7 @@ int main() {
 	ContinuedFraction goldenRatio;
 	goldenRatio.head = 1;
 	goldenRatio.tail = &goldenRatio;
-	cout << "Golden ratio's continued fraction is: ";
+	cout << " Golden ratio's continued fraction is: ";
 	printCF(goldenRatio,10);
 
 	//create another continued fraction from array of integers

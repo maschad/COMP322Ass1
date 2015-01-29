@@ -1,5 +1,16 @@
 #include "continued.h"
 
+unsigned int gcd(unsigned int a, unsigned int b)
+{
+	if(a == 0)
+	{
+		return b;
+	}
+	else
+	{
+		return gcd(b%a,a);
+	}
+}
 ContinuedFraction *getCFlargerThanOne(unsigned int b, unsigned int a) {
   // your code here
 }
