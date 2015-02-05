@@ -85,13 +85,15 @@ ContinuedFraction *getCF(unsigned int head, ContinuedFraction *fixed, ContinuedF
 	ContinuedFraction *x = new ContinuedFraction;
 	(*x).head = head;
 
-	if((*x).tail == nullptr)
+	if(period->tail == nullptr)
 	{
 		return x;
 	}
 	else
 	{
-		//return x + getCF(&fixed->head,&fixed->tail,&period->head);
+		ContinuedFraction *fTail = fixed->tail;
+		ContinuedFraction *pTail = period->tail;
+		return getCF(fixed->head,fTail,pTail);
 	}
 
 }
@@ -99,13 +101,14 @@ ContinuedFraction *getCF(unsigned int head, ContinuedFraction *fixed, ContinuedF
 
 Fraction getApproximation(ContinuedFraction *fr, unsigned int n)
 {
+	Fraction y;
+	y.numerator = fr->head;
+	y.denominator = fr->tail->head;
 
-	if(n==0)
+	if(n == 0)
 	{
-		Fraction y = new Fraction;
-		y.numerator = fr->head;
-		y.denominator = fr->tail;
 		return y;
+
 	}
 	else
 	{
